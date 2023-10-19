@@ -12,7 +12,7 @@ def openssl_repositories():
         http_archive,
         name = "openssl",
         build_file = "//build/openresty/openssl:BUILD.bazel",
-        sha256 = "b3aa61334233b852b63ddb048df181177c2c659eb9d4376008118f9c08d07674",
+        sha256 = "8dee9b24bdb1dcbf0c3d1e9b02fb8f6bf22165e807f45adeb7c9677536859d3b",
         strip_prefix = "openssl-" + version,
         urls = [
             "https://www.openssl.org/source/openssl-" + version + ".tar.gz",

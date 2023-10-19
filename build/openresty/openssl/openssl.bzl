@@ -58,16 +58,17 @@ def build_openssl(
         }),
         lib_source = ":%s-all_srcs" % name,
         out_binaries = ["openssl"],
+        out_data_dirs = ["providers"],
         # Note that for Linux builds, libssl must come before libcrypto on the linker command-line.
         # As such, libssl must be listed before libcrypto
         out_shared_libs = select({
             "@platforms//os:macos": [
-                "libssl.3.dylib",
-                "libcrypto.3.dylib",
+                "libssl.1.1.dylib",
+                "libcrypto.1.1.dylib",
             ],
             "//conditions:default": [
-                "libssl.so.3",
-                "libcrypto.so.3",
+                "libssl.so.1.1",
+                "libcrypto.so.1.1",
             ],
         }),
         targets = [
