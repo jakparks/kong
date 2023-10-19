@@ -88,6 +88,9 @@ build-venv: check-bazel
 		$(BAZEL) build //build:venv --verbose_failures --action_env=BUILD_NAME=$(BUILD_NAME); \
 	fi
 
+build-container:
+	docker build . -t test-kong-build:latest --build-arg gh_token=${GITHUB_TOKEN}
+
 install-dev-rocks: build-venv
 	@. $(VENV) ;\
 	for rock in $(DEV_ROCKS) ; do \

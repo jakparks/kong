@@ -6,9 +6,7 @@ exports_files([
     "package/nfpm.yaml",
 ])
 
-lib_deps = [
-    "@openssl",  #TODO: select over fips (but select doesn't work in list comprehension)
-]
+lib_deps = []
 
 install_lib_deps_cmd = "\n".join([
     """
